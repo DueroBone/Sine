@@ -1,6 +1,5 @@
-
+import java.lang.Math;
 public class Sine {
-import math
 static double samplesTest = 0; //Adjustable
 static double pi = 3.141592653589793238;
 static double pi2 = pi/2;
