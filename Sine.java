@@ -10,7 +10,7 @@ static double exp = 0;
     
   }
   public static double compSin(double input) {
-    double n1 = ((Math.pow(((x%pi)-pi2),exp)/(pi2**exp)) * -1) + 1;
-    return input;
+    double n1 = ((Math.pow(((x%pi)-pi2),exp)/Math.pow(pi2,exp))*-1) + 1;
+    return n1;
   }
 }
