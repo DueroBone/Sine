@@ -1,19 +1,19 @@
 import java.lang.Math;
 //import java.lang.reflect.Array;
 public class Sine {
-  static double samplesTest = 100; //Adjustable
+  static int samplesTest = 1000; //Adjustable   <=100000000
   static double pi = 3.141592653589793238;
   static double pi2 = pi/2;
-  static double samplesExponent = 20;
+  static int samplesExponent = 20;
   //static double x = 0;
   static double exponent = 0;
     public static void main(String[] args) {
       exponent = 2;
-      System.out.println(compExponent());
+      System.out.println(computeExponent());
     }
 
 
-    public static double compSin(double x) {
+    public static double computeSine(double x) {
       double n1 = ((Math.pow(((x%pi)-pi2),exponent)/Math.pow(pi2,exponent))*-1) + 1;
       return n1;
     }
@@ -22,21 +22,29 @@ public class Sine {
       double total = 0;
       for (int i = 0; i < input.length; i=i+1){
         total = total + input[i];
-        System.out.println("Total = " + input[i] + " " + i);
       }
       total = total/input.length;
       return total;
     }
 
-    public static double compExponent(){
+    public static double computeExponent(){
       double xIncrement = pi/samplesTest;
-      double differences[] = new double[(int) samplesTest];
+      double differences[] = new double[samplesTest];
       double x = 0;
-      for (int i = 0; i<samplesTest; i++) {
-        x = + xIncrement;
-        differences[i] = Math.abs(compSin(x) - Math.sin(x));
-        System.out.println("X = " + x + "  |  Sine = " + compSin(x));
+      for (int i=0; i<samplesTest; i++) {
+        x = x + xIncrement;
+        differences[i] = Math.abs(computeSine(x) - Math.sin(x));
       }
       return findAverageOfArray(differences);
+    }
+    public static double computeDigit(){
+      double accuracy[] = new double[samplesExponent];
+      for (int i=0; i<samplesExponent; i++){
+        accuracy[i] = computeSine(i);
+      }
+
+      return 0.0;
+    }
+    public static void zoomExponent(){
     }
 }
