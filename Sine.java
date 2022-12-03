@@ -8,8 +8,8 @@ public class Sine {
   //static double x = 0;
   static double exponent = 0;
     public static void main(String[] args) {
-      exponent = 2;
-      System.out.println(computeExponent());
+      exponent = 1;
+      System.out.println(computeDigit());
     }
 
 
@@ -18,7 +18,7 @@ public class Sine {
       return n1;
     }
 
-    public static double findAverageOfArray(double input[]){
+    public static double findAverageOfArray(double input[]) {
       double total = 0;
       for (int i = 0; i < input.length; i=i+1){
         total = total + input[i];
@@ -27,7 +27,17 @@ public class Sine {
       return total;
     }
 
-    public static double computeExponent(){
+    public static double findHighestOfArray(double input[]) {
+      double highest = 0;
+      for (int i=0; i<input.length; i++) {
+        if (input[i] > highest) {
+          highest = input[i];
+        }
+      }
+      return highest;
+    }
+
+    public static double computeExponent() {
       double xIncrement = pi/samplesTest;
       double differences[] = new double[samplesTest];
       double x = 0;
@@ -37,14 +47,17 @@ public class Sine {
       }
       return findAverageOfArray(differences);
     }
-    public static double computeDigit(){
+    public static double computeDigit() {
       double accuracy[] = new double[samplesExponent];
+      double exponentIncrement = 1.0/samplesExponent;
       for (int i=0; i<samplesExponent; i++){
-        accuracy[i] = computeSine(i);
+        accuracy[i] = computeExponent();
+        exponent = exponent + exponentIncrement;
+        //System.out.println(exponent + " | " + accuracy[i]);
       }
-
-      return 0.0;
+      return findHighestOfArray(accuracy);
     }
-    public static void zoomExponent(){
+    public static void zoomExponent() {
+      
     }
 }
