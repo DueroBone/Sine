@@ -1,5 +1,5 @@
 import java.lang.Math;
-//import java.lang.reflect.Array;
+import java.lang.reflect.Array;
 public class Sine {
   static int samplesTest = 1000; //Adjustable   <=100000000
   static double pi = 3.141592653589793238;
@@ -58,6 +58,6 @@ public class Sine {
       return findHighestOfArray(accuracy);
     }
     public static void zoomExponent() {
-      
+
     }
 }
