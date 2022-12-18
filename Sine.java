@@ -62,7 +62,7 @@ public class Sine {
         result2 = computeExponent(expTesting);
 
         if (exponent == expTesting) { //if there is no change in the exponent
-          i = i + (maxRepeats/1);
+          i = i + (maxRepeats);
         }
 
         if (result1 > result2) { //if currently going up
